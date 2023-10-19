@@ -1,0 +1,10 @@
+<igx-list class="folders">
+  <igx-list-item *ngFor="let folder of folders" igxDrop
+                 (enter)="enterDropZone($event)"
+                 (leave)="leaveDropZone($event)"
+                 (dropped)="dropElement($event)"
+                 [dropChannel]="folder.dropChannel">
+    <igx-icon igxListThumbnail>{{folder.icon}}</igx-icon>
+    <h4 igxListLineTitle>{{ folder.text }}</h4>
+  </igx-list-item>
+</igx-list>

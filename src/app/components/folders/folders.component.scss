@@ -1,0 +1,82 @@
+@use '../../../variables' as *;
+
+.drag-ghost {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: rem(180px);
+  color: contrast-color($color: 'secondary', $variant: 200);
+  background-color: color($color: 'secondary', $variant: 200);
+  font-size: rem(13px);
+  padding: rem(8px);
+  border-radius: rem(4px);
+
+  igx-icon {
+    margin-right: rem(8px);
+  }
+}
+
+:host {
+  display: flex;
+  user-select: none;
+  font-weight: 400;
+  font-style: normal;
+  height: 100%;
+
+  .folders {
+    width: rem(200px);
+    padding: 8px;
+    background: color($color: 'gray', $variant: 50);
+    border: none;
+
+    igx-icon {
+      margin: 0;
+    }
+
+    igx-list-item {
+      cursor: pointer;
+      border-radius: 4px;
+      background: transparent;
+      transition: background .15s $ease-out-quad;
+
+      &.drag-enter {
+        background: color($color: 'secondary', $variant: 100);
+      }
+
+      &:hover {
+        background: color($color: 'gray', $variant: 100);
+      }
+
+      &:nth-child(5) {
+        igx-icon {
+          color: #af1159;
+        }
+      }
+
+      &:nth-child(6) {
+        igx-icon {
+          color: #0071bf;
+        }
+      }
+
+      &:nth-child(7) {
+        igx-icon {
+          color: #4eb862;
+        }
+      }
+    }
+  }
+
+  .emails {
+    flex-grow: 1;
+    border: none;
+    border-radius: 0;
+  }
+
+  .email-checked {
+    color: contrast-color($color: 'secondary', $variant: 100);
+    background: color($color: 'secondary', $variant: 100);
+    transition: background .1s ease-out;
+  }
+}
